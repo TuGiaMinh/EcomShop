@@ -16,4 +16,9 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CustomerSite\CustomerSite.csproj" />
+    <ProjectReference Include="..\RookieShop.Shared\RookieShop.Shared.csproj" />
+  </ItemGroup>
+
 </Project>

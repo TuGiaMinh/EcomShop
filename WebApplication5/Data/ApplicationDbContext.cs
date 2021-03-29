@@ -13,5 +13,6 @@ namespace WebApplication5.Data
             : base(options)
         {
         }
+        public DbSet<Brand> Brands { get; set; }
     }
 }
