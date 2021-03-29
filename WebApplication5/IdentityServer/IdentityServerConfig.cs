@@ -19,7 +19,7 @@ namespace WebApplication5.IdentityServer
         public static IEnumerable<ApiScope> ApiScopes =>
              new ApiScope[]
              {
-                  new ApiScope("rokieshop.api", "Rookie Shop API")
+                  new ApiScope("rookieshop.api", "Rookie Shop API")
              };
 
         public static IEnumerable<Client> Clients =>
