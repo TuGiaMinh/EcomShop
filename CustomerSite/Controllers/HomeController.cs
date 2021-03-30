@@ -1,10 +1,13 @@
 ﻿using CustomerSite.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
+using RookieShop.Shared;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace CustomerSite.Controllers
@@ -18,11 +21,20 @@ namespace CustomerSite.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            List<BrandVm> brands = new List<BrandVm>();
+            var client = new HttpClient();
+            client.BaseAddress = new Uri("https://localhost:44333/");
+            HttpResponseMessage res = await client.GetAsync("api/brands");
+            if (res.IsSuccessStatusCode)
+            {
+                var result = res.Content.ReadAsStringAsync().Result;
+                brands = JsonConvert.DeserializeObject<List<BrandVm>>(result);
+            }
+            ViewBag.Count = brands.Count;
             return View();
         }
-
         public IActionResult Privacy()
         {
             return View();
