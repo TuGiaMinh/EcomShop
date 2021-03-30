@@ -36,6 +36,11 @@ namespace WebApplication5.Controllers
         [AllowAnonymous]
         public async Task<ActionResult<BrandVm>> GetBrand(int id)
         {
+            var user = _context.Users.ToList();
+            var userroles = _context.UserRoles.ToList();
+            var roles = _context.Roles.ToList();
+
+
             var brand = await _context.Brands.FindAsync(id);
 
             if (brand == null)

@@ -44,9 +44,9 @@ namespace WebApplication5.IdentityServer
 
                     AllowedGrantTypes = GrantTypes.Code,
 
-                    RedirectUris = { "https://localhost:44333/signin-oidc" },
+                    RedirectUris = { "https://localhost:44367/signin-oidc" },
 
-                    PostLogoutRedirectUris = { "https://localhost:44333/signout-callback-oidc" },
+                    PostLogoutRedirectUris = { "https://localhost:44367/signout-callback-oidc" },
 
                     AllowedScopes = new List<string>
                     {
@@ -64,9 +64,9 @@ namespace WebApplication5.IdentityServer
                     RequireConsent = false,
                     RequirePkce = true,
 
-                    RedirectUris =           { $"https://localhost:44341/swagger/oauth2-redirect.html" },
-                    PostLogoutRedirectUris = { $"https://localhost:44341/swagger/oauth2-redirect.html" },
-                    AllowedCorsOrigins =     { $"https://localhost:44341" },
+                    RedirectUris =           { $"https://localhost:44333/swagger/oauth2-redirect.html" },
+                    PostLogoutRedirectUris = { $"https://localhost:44333/swagger/oauth2-redirect.html" },
+                    AllowedCorsOrigins =     { $"https://localhost:44333" },
 
                     AllowedScopes = new List<string>
                     {
